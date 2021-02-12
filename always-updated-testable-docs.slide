@@ -38,7 +38,9 @@ cmd/eg-godoc/main.go:
 .code cmd/eg-godoc/main.go /^func aFunc\(/,/^}/
 
 
-Let's run godoc and see how it documents main.go:
+Let's run godoc and see how it documents:
+1. main.go
+1. mypkg.AFunc
 
 ```
 godoc -http :8080
@@ -48,7 +50,8 @@ search: siuyin
 
 ## Opaque "main" function
 
-I sometimes see this; cmd/eg-app/main.go:
+I sometimes see this  
+cmd/eg-app/main.go:
 
 .code cmd/eg-app/main.go /^func main\(/,/^}/
 
@@ -70,13 +73,13 @@ Have you heard:
 Sometimes to make your intent clear, you need to document your
 implementation details.
 
-These are private functions. Godoc will not show them to you.
+These are usually private functions. Godoc will not show them to you.  
 Unless you dig into the code itself.
 
 ## Intent + Implementation
 Documentation is most useful when:
-1. Your documentation intent
-1. Coincides / is expressed by your implementation
+1. Your documentation intent,
+1. coincides / is expressed by your implementation
 
 Jupyter notebooks are extremely popular because they
 implement and document at the same time, in one place.
@@ -107,3 +110,51 @@ You're looking at it -- `go present`
 Let's have a look at how `present`'s article format can use used.
 
 [mydoc.article](mydoc.article)
+
+## Testable documentation
+
+Code gets refactored all the time.
+
+One powerful refactoring technique is to rename functions to
+better reflect their intent.
+
+Lets rename aFunc in cmd/eg-doc/main.go to aFunction.
+
+Let's see the effect of that refactor on
+[mydoc.article](mydoc.article).
+
+---
+
+Revert the rename and check 
+[mydoc.article](mydoc.article) again.
+
+## Under the hood
+Let's look at mydoc.article source.
+
+## Using go present
+Go present is a go tool:
+
+1. Download Go from [https://golang.org/](https://golang.org/).
+
+1. go get "golang.org/x/tools/cmd/present"
+
+1. Include the `present` binary in your PATH
+
+1. Run it with:
+```
+$ present
+
+or 
+
+$ present -http :3999 -orighost 127.0.0.1
+```
+
+## Presentation and code download
+
+.link https://github.com/siuyin/present-go-updated-testable-docs
+
+---
+
+**Xedit is hiring:**
+1. Send your resume to: careers@xendit.co
+1. Mention teams: "Ops Automation" and "Engineering Ops"
