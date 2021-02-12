@@ -1,0 +1,109 @@
+# Always updated and testable docs
+with Go Tools
+27 Feb 2021
+
+Loh Siu Yin
+Engineering Manager, Xendit
+siuyin@xendit.co
+
+## What's wrong with README.md ?
+README.md:
+```
+This code performs function a.
+```
+
+While in main.go:
+```
+func main() {
+  aFunc()
+  bFunc()
+  cFunc()
+}
+```
+
+And some time later:
+```
+func main() {
+  bFunc()
+  cFunc()
+}
+```
+
+## What's wrong with Godoc ?
+
+cmd/eg-godoc/main.go:
+
+.code cmd/eg-godoc/main.go /^func main\(/,/^}/
+
+.code cmd/eg-godoc/main.go /^func aFunc\(/,/^}/
+
+
+Let's run godoc and see how it documents main.go:
+
+```
+godoc -http :8080
+
+search: siuyin
+```
+
+## Opaque "main" function
+
+I sometimes see this; cmd/eg-app/main.go:
+
+.code cmd/eg-app/main.go /^func main\(/,/^}/
+
+.code mypkg/mypkg.go /^\/\/ App /,/^}/
+
+Let's look at godoc for mypkg.App()
+
+## Please refactor to expose public functions
+
+"This happens because you haven't yet refactored your code"
+
+"You should expose main capabilities as public functions"
+
+Have you heard:  
+"The devil is in the details"?
+
+---
+
+Sometimes to make your intent clear, you need to document your
+implementation details.
+
+These are private functions. Godoc will not show them to you.
+Unless you dig into the code itself.
+
+## Intent + Implementation
+Documentation is most useful when:
+1. Your documentation intent
+1. Coincides / is expressed by your implementation
+
+Jupyter notebooks are extremely popular because they
+implement and document at the same time, in one place.
+
+Traditional languages like Go have their implementation
+spread over multiple source files.
+
+And often have separate documentation files like `README.md`s.
+
+## Linking Intent with Implementation
+What if you could have a documentation file that  
+links, pulls-in,  
+the implementation?
+
+You decide what you want to document -- your intent  
+and let the code, the implementation, speak for itself.
+
+Such a tool exists  
+today, right now!
+
+You're looking at it -- `go present`
+
+## go present's two personalities
+1. slide -- this is what you are seeing now
+1. article -- presents your code in a long-form article format
+
+
+Let's have a look at how `present`'s article format can use used.
+
+[mydoc.article](mydoc.article)

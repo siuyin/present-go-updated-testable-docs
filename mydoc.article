@@ -1,0 +1,27 @@
+# Documenting with Intent and Implementation
+27 Feb 2021
+
+Loh Siu Yin
+
+## cmd/eg-godoc shows godoc's failure to document main functions
+
+.code cmd/eg-godoc/main.go /^func main\(/,/^}/
+
+### aFunc
+.code cmd/eg-godoc/main.go /^func aFunc\(/,/^}/
+
+### mypkg.AFunc
+.code mypkg/mypkg.go /^\/\/ AFunc /,/^}/
+
+
+## cmd/eg-app makes clear what pkg.App does
+.code cmd/eg-app/main.go /^func main\(/,/^}/
+
+### mypkg.App
+.code mypkg/mypkg.go /^\/\/ App /,/^}/
+
+#### aFunc
+.code mypkg/mypkg.go /^func aFunc\(/,/$/
+
+#### bFunc
+.code mypkg/mypkg.go /^func bFunc\(/,/$/
