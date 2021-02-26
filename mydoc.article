@@ -4,7 +4,6 @@
 Loh Siu Yin
 
 ## cmd/eg-godoc shows godoc's failure to document main functions
-
 .code cmd/eg-godoc/main.go /^func main\(/,/^}/
 
 ### aFunc
@@ -14,7 +13,7 @@ Loh Siu Yin
 .code mypkg/mypkg.go /^\/\/ AFunc /,/^}/
 
 
-## cmd/eg-app makes clear what pkg.App does
+## cmd/eg-app makes clear what mypkg.App does
 .code cmd/eg-app/main.go /^func main\(/,/^}/
 
 ### mypkg.App

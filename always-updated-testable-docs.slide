@@ -32,7 +32,17 @@ func main() {
 }
 ```
 
-## What's wrong with Godoc ?
+## Is there a tool that will document code functions?
+
+## godoc or Doxygen or javadoc ...
+
+## Getting godoc
+
+go get golang.org/x/tools/cmd/godoc
+
+and put ~/go/bin in your PATH.
+
+## What are godoc's limitations?
 
 cmd/eg-godoc/main.go:
 
@@ -50,6 +60,18 @@ godoc -http :8080
 
 search: siuyin
 ```
+
+## What did we just see?
+
+- godoc does not document main functions at all.
+
+- mypkg public function AFunc was properly documented.
+
+
+However the private function aFunc in,  
+cmd/eg-godoc/main.go was not documented.
+
+Of course you say. aFunc is private!
 
 ## Opaque "main" function
 
@@ -79,6 +101,8 @@ implementation details.
 These are usually private functions. Godoc will not show them to you.  
 Unless you dig into the code itself.
 
+## What can we do about this situation?
+
 ## Intent + Implementation
 Documentation is most useful when:
 1. Your documentation intent,
@@ -93,7 +117,7 @@ spread over multiple source files.
 And often have separate documentation files like `README.md`s.
 
 ## Linking Intent with Implementation
-What if you could have a documentation file that  
+What if you could have a documentation product that  
 links, pulls-in,  
 the implementation?
 
@@ -104,6 +128,26 @@ Such a tool exists
 today, right now!
 
 You're looking at it -- `go present`
+
+
+## Getting  go present
+
+Go present is a go tool:
+
+1. Download Go from [https://golang.org/](https://golang.org/).
+
+1. go get "golang.org/x/tools/cmd/present"
+
+1. Include the `present` binary in your PATH; typically PATH=~/go/bin:$PATH
+
+1. Run it with:
+```
+$ present
+
+or 
+
+$ present -http :3999 -orighost 127.0.0.1
+```
 
 ## go present's two personalities
 1. slide -- this is what you are seeing now
@@ -134,23 +178,6 @@ Revert the rename and check
 ## Under the hood
 Let's look at mydoc.article source.
 
-## Using go present
-Go present is a go tool:
-
-1. Download Go from [https://golang.org/](https://golang.org/).
-
-1. go get "golang.org/x/tools/cmd/present"
-
-1. Include the `present` binary in your PATH
-
-1. Run it with:
-```
-$ present
-
-or 
-
-$ present -http :3999 -orighost 127.0.0.1
-```
 
 ## Presentation and code download
 
