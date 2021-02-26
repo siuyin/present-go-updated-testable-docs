@@ -11,6 +11,7 @@ README.md:
 ```
 This code performs function a.
 ```
+---
 
 While in main.go:
 ```
@@ -20,6 +21,8 @@ func main() {
   cFunc()
 }
 ```
+
+---
 
 And some time later:
 ```
@@ -118,7 +121,7 @@ Code gets refactored all the time.
 One powerful refactoring technique is to rename functions to
 better reflect their intent.
 
-Lets rename aFunc in cmd/eg-doc/main.go to aFunction.
+Lets rename aFunc in cmd/eg-godoc/main.go to aFunction.
 
 Let's see the effect of that refactor on
 [mydoc.article](mydoc.article).
