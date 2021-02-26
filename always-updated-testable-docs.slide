@@ -178,6 +178,19 @@ Revert the rename and check
 ## Under the hood
 Let's look at mydoc.article source.
 
+---
+
+The `go present` source is essentially an extended version of markdown.
+
+Useful commands:
+
+- .code {filename} /start regexp/,/end regexp/
+
+- .play {filename.go} /start regexp/,/end regexp/
+
+- .image {img.png} height width
+
+- .link {url}
 
 ## Presentation and code download
 
