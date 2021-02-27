@@ -114,7 +114,8 @@ Documentation is most useful when:
 1. Your documentation intent,
 1. coincides / is expressed by your implementation
 
-Jupyter notebooks are extremely popular because they
+[Jupyter notebooks](https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb)
+are extremely popular because they
 implement and document at the same time, in one place.
 
 Traditional languages like Go have their implementation
