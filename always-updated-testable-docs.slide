@@ -94,8 +94,10 @@ Let's look at godoc for mypkg.App()
 
 "You should expose main capabilities as public functions"
 
-Have you heard:  
-"The devil is in the details"?
+But who writes a main.go on the first try completely
+implemented with package public functions?
+
+Most of us start by writing local private functions, then refactor.
 
 ---
 
