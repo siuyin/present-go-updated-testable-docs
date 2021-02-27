@@ -6,7 +6,7 @@ Loh Siu Yin
 Engineering Manager, Xendit
 siuyin@xendit.co
 
-## What's wrong with README.md ?
+## README.md's go out of date
 README.md:
 ```
 This code performs function a.
@@ -31,6 +31,10 @@ func main() {
   cFunc()
 }
 ```
+
+---
+
+We need a tool that can document the code itself.
 
 ## Is there a tool that will document code functions?
 
