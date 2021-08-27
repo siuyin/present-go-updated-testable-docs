@@ -34,9 +34,9 @@ func main() {
 
 ---
 
-We need a tool that can document the code itself.
+We need a tool that can document by tracking the code itself.
 
-## Is there a tool that will document code functions?
+## Is there a tool that will document and track code?
 
 ## godoc or Doxygen or javadoc ...
 
@@ -46,7 +46,7 @@ go get golang.org/x/tools/cmd/godoc
 
 and put ~/go/bin in your PATH.
 
-## What are godoc's limitations?
+## Let us evaluate godoc 
 
 cmd/eg-godoc/main.go:
 
@@ -116,7 +116,7 @@ Documentation is most useful when:
 
 [Jupyter notebooks](https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb)
 are extremely popular because they
-implement and document at the same time, in one place.
+both implement and document at the same time, in one place.
 
 Traditional languages like Go have their implementation
 spread over multiple source files.
